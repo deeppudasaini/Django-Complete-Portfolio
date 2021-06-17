@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>CV - Brand</title>
+    <link rel="stylesheet" href="./static/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="./static/assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="./static/assets/css/Animated-CSS-Waves-Background-SVG.css">
+    <link rel="stylesheet" href="./static/assets/css/gradient-navbar-1.css">
+    <link rel="stylesheet" href="./static/assets/css/gradient-navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-md" id="app-navbar">
+        <div class="container-fluid"><a class="navbar-brand" href="#"><i class="icon ion-ios-infinite" id="brand-logo"></i></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/portfolio">Portfolio</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/cv">CV</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/hire">Hire</a></li>
+                </ul>
+        </div>
+        </div>
+    </nav><div class="svg-container">
+    <main class="page cv-page">
+        <section class="portfolio-block block-intro border-bottom">
+            <div class="container">
+                <div class="avatar" style="background-image:url(&quot;./static/assets/img/avatars/avatar.jpg&quot;);"></div>
+                <div class="about-me">
+                    <p>Hello! I am <strong>Deep Pudasaini</strong>. I am currently styuding B.Sc(Hons) Computing(Software Engineering) from University of Northampton</p><a class="btn btn-outline-primary" role="button" href="#">Hire me</a></div>
+            </div>
+        </section>
+        <section class="portfolio-block cv">
+            <div class="container">
+                <div class="work-experience group">
+                    <div class="heading">
+                        <h2 class="text-center">Work Experience</h2>
+                    </div>
+                    <div class="item">
+                        <div class="row">
+                        {% for w in work %}
+                            <div class="col-md-6">
+                                <h3>{{w.position}}</h3>
+                                <h4 class="organization">{{w.company}}</h4>
+                            </div>
+                            <div class="col-md-6"><span class="period">{{w.starttime}} - {{w.endtime}}</span></div>
+                            
+                        </div>
+                        <p class="text-muted">{{w.experience}}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                </div>
+                <div class="education group">
+                    <div class="heading">
+                        <h2 class="text-center">Education</h2>
+                    </div>
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Secondary Education</h3>
+                                <h4 class="organization">Shanti Aadarsha Secondary School</h4>
+                            </div>
+                            <div class="col-6"><span class="period">09/2005 - 05/2010</span></div>
+                        </div>
+                        <p class="text-muted">I completed my Secondary level education from this school and score 3.45 GPA in SEE.</p>
+                    </div>
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>High School</h3>
+                                <h4 class="organization">Kathmandu Model College(KMC)</h4>
+                            </div>
+                            <div class="col-md-6"><span class="period">09/2010 - 06/2015</span></div>
+                        </div>
+                        <p class="text-muted">I completed my high school education/+2 from Kathmandu Model College in Science faculty with Physics major and I score 2.92 GPA with B+ Grade.</p>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h3>Bachelors</h3>
+                                    <h4 class="organization">NAMI College</h4>
+                                </div>
+                                <div class="col-md-6"><span class="period">09/2010 - 06/2015</span></div>
+                            </div>
+                            <p class="text-muted">I am currently enrolledin B.Sc(Hons) Computing (Software Engineering) from University of Northaampton,UK.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="skills portfolio-info-card">
+                                <h2>Skills</h2>
+                                {% for skill in skills %}
+                                <h3>{{skill.name}}</h3>
+                                <div class="progress">
+                                    <div class="progress-bar" aria-valuenow="{{skill.percent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{skill.percent}}%;"><span class="sr-only">100%</span></div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="contact-info portfolio-info-card">
+                                <h2>Contact Info</h2>
+                                <div class="row">
+                                    <div class="col-1"><i class="icon ion-android-calendar icon"></i></div>
+                                    <div class="col-9"><span>02/26/2001</span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-1"><i class="icon ion-person icon"></i></div>
+                                    <div class="col-9"><span>Deep Pudasaini</span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-1"><i class="icon ion-ios-telephone icon"></i></div>
+                                    <div class="col-9"><span>+977 9863336834</span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-1"><i class="icon ion-at icon"></i></div>
+                                    <div class="col-9"><span>iamdeep8888@gmail.com</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hobbies group">
+                    <div class="heading">
+                        <h2 class="text-center">Hobbies</h2>
+                    </div>
+                    <p class="text-center text-muted">I have many hobbies like football, online gaming, listening to podcasts and many more</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="links"><a href="/cv">About me</a><a href="/hire">Contact me</a><a href="/portfolio">Projects</a></div>
+            <div class="social-icons"><a href="https://www.facebook.com/profile.php?id=100009801221837"><i class="icon ion-social-facebook"></i></a><a href="https://www.instagram.com/deeppudasaini07/"><i class="icon ion-social-instagram-outline"></i></a><a href="https://www.linkedin.com/in/deep-pudasaini-87bb921a0/"><i class="icon ion-social-linkedin"></i></a></div>
+        </div>
+    </footer>
+    <script src="./static/assets/js/jquery.min.js"></script>
+    <script src="./static/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="./static/assets/js/theme.js"></script>
+</body>
+
+</html>
